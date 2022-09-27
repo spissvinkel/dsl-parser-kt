@@ -43,7 +43,7 @@ class CalculatorTest {
         private val mulFactor: Parser<String, Op> = "*".skipThen(factor).map(mul)
         private val divFactor: Parser<String, Op> = "/".skipThen(factor).map(div)
 
-        fun parse(s: String): Result<String, Int> = parseAll(s, expr)
+        fun parse(s: String): ParseResult<String, Int> = parseAll(s, expr)
     }
 
     @Test
@@ -68,7 +68,7 @@ class CalculatorTest {
         )
         ss.forEach { (s, v) ->
             val r = parse(s)
-            r.shouldBeInstanceOf<Success<String, Int>>()
+            r.shouldBeInstanceOf<ParseSuccess<String, Int>>()
             r.value shouldBe v
         }
     }
@@ -86,7 +86,7 @@ class CalculatorTest {
         )
         ss.forEach { s ->
             val r = parse(s)
-            r.shouldBeInstanceOf<Failure<String, Int>>()
+            r.shouldBeInstanceOf<ParseFailure<String, Int>>()
         }
     }
 }

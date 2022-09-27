@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package no.simenstorsveen.dslparser
 
 sealed class Either<L, R> {

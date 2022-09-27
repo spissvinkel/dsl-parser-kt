@@ -11,7 +11,7 @@ sealed class Maybe<T> {
     fun isNothing(): Boolean = !isSomething()
 }
 
-class Something<T>(val value: T) : Maybe<T>() {
+class Something<T>(private val value: T) : Maybe<T>() {
 
     override fun isSomething(): Boolean = true
     override fun orDefault(defVal: T): T = value
