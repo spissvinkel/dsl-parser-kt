@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>no.simenstorsveen</groupId>
+  <artifactId>dsl-parser</artifactId>
+  <versioning>
+    <versions>
+      <version>0.2.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20220927173548</lastUpdated>
+  </versioning>
+</metadata>
