@@ -2,18 +2,39 @@
 
 A simple parser library for expressions and domain specific languages, written in Kotlin.
 
+## Use
 
-## Install dependencies
+### Maven dependency
+
+```xml
+<repositories>
+    <repository>
+        <id>dsl-parser-mvn-repo</id>
+        <url>https://github.com/spissvinkel/dsl-parser-kt/raw/mvn-repo</url>
+    </repository>
+</repositories>
+```
+```xml
+<dependencies>
+    <dependency>
+        <groupId>no.simenstorsveen</groupId>
+        <artifactId>dsl-parser</artifactId>
+        <version>0.2.1</version>
+    </dependency>
+</dependencies>
+```
+
+## Develop
+
+### Install dependencies
 
 Java JDK 14+ and Maven 3.8+ are required to build the project
 
-
-## Build project
+### Build project
 
 ```bash
 $ mvn clean package
 ```
-
 
 ## References
 
