@@ -33,15 +33,15 @@ class CalculatorTest {
         private val calculate: (initAndOps: Pair<Int, List<Op>>) -> Int = { (init, ops) -> ops.fold(init, evaluate) }
 
         // Create references to break cycles and refer to parsers not yet initialized
-        private val expr: Parser<String, Int> = ref { term.then(seq(addTerm.or(subTerm))).map(calculate) }
-        private val term: Parser<String, Int> = ref { factor.then(seq(mulFactor.or(divFactor))).map(calculate) }
+        private val expr: StringParser<Int> = ref { term.then(seq(addTerm.or(subTerm))).map(calculate) }
+        private val term: StringParser<Int> = ref { factor.then(seq(mulFactor.or(divFactor))).map(calculate) }
 
-        private val factor: Parser<String, Int> = integer.or("(".skipThen(expr).thenSkip(")"))
+        private val factor: StringParser<Int> = integer.or("(".skipThen(expr).thenSkip(")"))
 
-        private val addTerm: Parser<String, Op> = "+".skipThen(term).map(add)
-        private val subTerm: Parser<String, Op> = "-".skipThen(term).map(sub)
-        private val mulFactor: Parser<String, Op> = "*".skipThen(factor).map(mul)
-        private val divFactor: Parser<String, Op> = "/".skipThen(factor).map(div)
+        private val addTerm: StringParser<Op> = "+".skipThen(term).map(add)
+        private val subTerm: StringParser<Op> = "-".skipThen(term).map(sub)
+        private val mulFactor: StringParser<Op> = "*".skipThen(factor).map(mul)
+        private val divFactor: StringParser<Op> = "/".skipThen(factor).map(div)
 
         fun parse(s: String): ParseResult<String, Int> = parseAll(s, expr)
     }
