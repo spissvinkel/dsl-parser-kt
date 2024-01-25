@@ -19,7 +19,7 @@ A simple parser library for expressions and domain specific languages, written i
     <dependency>
         <groupId>no.simenstorsveen</groupId>
         <artifactId>dsl-parser</artifactId>
-        <version>0.2.1</version>
+        <version>0.2.2</version>
     </dependency>
 </dependencies>
 ```
@@ -28,7 +28,7 @@ A simple parser library for expressions and domain specific languages, written i
 
 ### Install dependencies
 
-Java JDK 14+ and Maven 3.8+ are required to build the project
+Java JDK 21+ and Maven 3.8+ are required to build the project
 
 ### Build project
 
